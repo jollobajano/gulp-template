@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="application">
+    <head>
+        <base href="/">
+        <title>Carsten är bäst!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- bower:css -->
+        <!-- endbower -->
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
+    </head>
+    <body>
+
+
+	<div class="page-wrap">
+
+	    <nav ng-controller="NavigationController as nav">
+		<ul>
+		    <li ng-repeat="item in nav.menuItems" ng-class="nav.condActiveClass(item.url)">
+                        <a href="#{{item.url}}">{{item.title}}</a>
+                    </li>
+		</ul>
+	    </nav>
+
+	    <section ng-view class="view"></section>
+
+
+	</div>
+
+
+        <footer class="site-footer">
+	    <section>Carsten</section>
+	    <section>Carsten</section>
+	    <section>Carsten</section>
+	    <section>Carsten</section>
+	</footer>
+
+        <!-- bower:js -->
+        <!-- endbower -->
+        <script src="js/all.min.js"></script>
+    </body>
+</html>
