@@ -9,12 +9,12 @@
 
 		     var items = NavigationServiceProvider.list();
 		     
-                     for (var item in items) {
-
-                         $routeProvider.when(items[item].url, {
-                             templateUrl: items[item].templateUrl
+                     angular.forEach (items, function(item) {
+                         $routeProvider.when(item.url, {
+                             templateUrl: item.templateUrl
                          });
-                     }
+                     });
+		     
                      $routeProvider.otherwise({
                          redirectTo: NavigationServiceProvider.otherwise()
                      });

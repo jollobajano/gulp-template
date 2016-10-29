@@ -10,7 +10,6 @@
 	    return fallBack;
 	};
     }
-
     
     angular.module('application.service')
 	.provider('NavigationService', function() {
@@ -36,8 +35,8 @@
 		return fallBack;
 	    };
 	    
-	    this.$get = [function() {
+	    this.$get = function() {
 		return new NavigationService(menuItems, fallBack);
-	    }];
-	});    
+	    };
+	});
 })();

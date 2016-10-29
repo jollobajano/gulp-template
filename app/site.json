@@ -1,0 +1,20 @@
+{
+    'items': [
+	{
+	    'title': 'Danmark',
+	    'url': '/danmark',
+	    'templateUrl': '/danmark/danmark.html'
+	},
+	{
+	    'title': 'Carsten',
+	    'url': '/',
+	    'templateUrl': '/hello/hello.html'
+	},
+	{
+	    'title': 'Mamma',
+	    'url': '/mamma',
+	    'templateUrl': '/mamma/mamma.html'
+	}
+    ],
+    'default' = '/'
+}

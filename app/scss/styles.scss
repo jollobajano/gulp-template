@@ -103,6 +103,10 @@ html, body {
 
 		&.active {
 		    background-color: lighten($base-blue, 25%);
+		    
+		    a:hover {
+			// background-color: lighten($base-blue, 25%);
+		    }
 		}
 		a {
 		    display: block;

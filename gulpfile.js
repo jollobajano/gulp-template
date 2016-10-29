@@ -72,7 +72,7 @@
     });
 
     gulp.task('html', function() {
-	return gulp.src('app/**/*.html')
+	return gulp.src(['app/**/*.html', 'app/**/*.json'])
 	    .pipe(wiredep({
 		ignorePath: '../bower_components/'
 	    }))
@@ -103,7 +103,7 @@
 	});
     });
 
-    gulp.task('clean:dist', function() {
+    gulp.task('clean', function() {
 	return del.sync('dist');
     });
 
@@ -115,11 +115,11 @@
 
     // Watch Files For Changes
     gulp.task('watch', ['browserSync'], function() {
+	gulp.watch('app/**/*.html', ['html']);
 	gulp.watch(
 	    ['app/**/*.js', 'test/**/*.js'],
 	    ['lint', 'scripts']);
 	gulp.watch('app/scss/**/*.scss', ['sass']);
-	gulp.watch('app/**/*.html', ['html']);
     });
 
     gulp.task('build', ['html', 'lint', 'sass', 'scripts']);
