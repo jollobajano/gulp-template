@@ -13,7 +13,8 @@
 	}));
 
 	it("should do something", function () {
-	    httpBackend.whenGET("http://api.reddit.com/user/yoitsnate/submitted.json").respond({
+	    var url = "http://api.reddit.com/user/yoitsnate/submitted.json";
+	    httpBackend.whenGET(url).respond({
 		data: {
 		    children: [
 			{

@@ -17,8 +17,8 @@
 		list: function() {
 		    return items;
 		},
-		add: function(item) {
-		    items.push(item);
+		time: function() {
+		    return new Date();
 		}
 	    };
 	}]);
