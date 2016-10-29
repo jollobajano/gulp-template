@@ -1,14 +1,21 @@
 (function () {
-    // 'use strict';
+    'use strict';
 
     angular.module('application.hello')
-	.controller('HelloController', ['CarstenService', function (CarstenService) {
-	    var self = this;
-	    self.message = 'Hello ';
-	    self.items = CarstenService.list();
-	    self.time = CarstenService.time();
-	    self.changeMessage = function () {
-        self.message = 'Goodbye';
-	    };
-}]);
+	.controller('HelloController', ['$scope', 'CarstenService', HelloController]);
+
+    function HelloController($scope, CarstenService) {
+	var self = this;
+	self.message= 'Hello ';
+	self.changeMessage = function() {
+            self.message = 'Goodbye';
+	};
+	$scope.items = [];
+	CarstenService.getItems()
+	    .then(function(data){
+		console.log(data);
+		$scope.items = data;
+	    });
+    }
+    
 })();

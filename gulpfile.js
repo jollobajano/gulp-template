@@ -1,22 +1,22 @@
 (function () {
     'use strict';
 
-    var gulp = require('gulp');
-    var plugins = require('gulp-load-plugins')();
     var browserSync = require('browser-sync').create();
-    var modRewrite = require('connect-modrewrite');
-    var jshint = require('gulp-jshint');
-    var sourcemaps = require('gulp-sourcemaps');
     var concat = require('gulp-concat');
     var del = require('del');
-    var uglify = require('gulp-uglify');
-    var rename = require('gulp-rename');
-    var wiredep = require('wiredep').stream;
-    var karmaServer = require('karma').Server;
-    var ngAnnotate = require('gulp-ng-annotate');
-    var insert = require('gulp-insert');
     var eslint = require('gulp-eslint');
+    var gulp = require('gulp');
+    var insert = require('gulp-insert');
+    var jshint = require('gulp-jshint');
+    var karmaServer = require('karma').Server;
+    var modRewrite = require('connect-modrewrite');
+    var ngAnnotate = require('gulp-ng-annotate');
     var path = require('path');
+    var plugins = require('gulp-load-plugins')();
+    var rename = require('gulp-rename');
+    var sourcemaps = require('gulp-sourcemaps');
+    var uglify = require('gulp-uglify');
+    var wiredep = require('wiredep').stream;
 
 
     
@@ -139,7 +139,7 @@
 
     // Watch Files For Changes
     gulp.task('watch', ['browserSync'], function () {
-        gulp.watch('app/**/*.html', ['html']);
+        gulp.watch(['app/**/*.html', 'app/**/*.json'], ['html']);
         gulp.watch(
 	    ['app/**/*.js', 'test/**/*.js'],
 	    ['lint', 'scripts']);

@@ -2,24 +2,20 @@
     'use strict';
 
     angular.module('application.service')
-	.factory('CarstenService', [function () {
-	    var items = [
-        {name: 'Carsten',
-		 text: 'Min lille bror.'},
-        {name: 'Carsten',
-		 text: 'Du är så duktig -- imponerande.'},
-        {name: 'Carsten',
-		 text: 'Min saknade bror.'},
-        {name: 'Carsten',
-		 text: 'Min skyddsängel.'}
-	    ];
-	    return {
-        list: function () {
-		    return items;
-        },
-        time: function () {
-		    return new Date();
-        }
-	    };
-}]);
+	.factory('CarstenService', ['$q', '$http', CarstenService]);
+
+
+    function CarstenService ($q, $http) {
+	return {
+            getItems: function () {
+		return $http.get('carsten.json')
+		    .then(function (response) {
+			return response.data;
+		    }, function (response) {  // error
+			return $q.reject(response);
+		    });
+            }
+	};
+    }
+    
 })();

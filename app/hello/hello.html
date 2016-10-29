@@ -2,12 +2,17 @@
 <h1>Carsten</h1>
 
 <div ng-controller="HelloController as ctrl">
-    <div ng-repeat="item in ctrl.items">
+    <div ng-repeat="item in items">
 	<section>
 	    <header>Finaste {{item.name}}, du är bäst!</header>
 	    <section>{{item.text}}</section>
 	</section>
     </div>
-    <div>Time: {{ctrl.time}}</div>
+    <div>Message: {{ctrl.message}}</div>
+    <div>
+	<button ng-click="ctrl.changeMessage()">
+	    Change Message
+	</button>
+    </div>
 </div>
 

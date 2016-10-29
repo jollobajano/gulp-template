@@ -134,21 +134,26 @@ html, body {
 	background-color: white;
     }
 
-    & > .view section{
-	@include outer-container;
-	margin-bottom: 20px;
-	& > header {
-	    @include span-columns(3);
-	    font-size: em($header-fontsize);
-	    color: $blue;
-	    font-weight: 700;
-	}
-	& > section {
-	    @include span-columns(9);
-	    font-size: em($section-fontsize);
-	    @include omega(2);
-	    color: $mycolor;
-	    background-color: $view-section-backgroundcolor;
+    & > .view {
+
+	padding: 7em 0 10em 0;
+
+	section{
+	    @include outer-container;
+	    margin-bottom: 20px;
+	    & > header {
+		@include span-columns(3);
+		font-size: em($header-fontsize);
+		color: $blue;
+		font-weight: 700;
+	    }
+	    & > section {
+		@include span-columns(9);
+		font-size: em($section-fontsize);
+		@include omega(2);
+		color: $mycolor;
+		background-color: $view-section-backgroundcolor;
+	    }
 	}
     }    
 }
