@@ -27,9 +27,9 @@ $secondColor: adjust-hue($nav-background-color, 120deg);
 $thirdColor: adjust-hue($nav-background-color, -120deg);
 
 
-
 $footheight: 2cm;
-
+$view-padding-top: 2em;
+$view-padding-bottom: 10em;
 
 //
 //  Fonts
@@ -136,7 +136,7 @@ html, body {
 
     & > .view {
 
-	padding: 7em 0 10em 0;
+	padding: $view-padding-top 0 $view-padding-bottom 0;
 
 	section{
 	    @include outer-container;
