@@ -3,21 +3,17 @@ describe('SiteDescriptionService', function() {
 
     describe('the service', function() {
 	
-	var siteDescriptionService;
+	var service;
 	
-	beforeEach(function() {
-	    module('application');
-	    module('application.service');
-	});
+	beforeEach(module('application.service'));
 
 	beforeEach(inject(function(SiteDescriptionService) {
-	    console.log('try to inject');
-	    siteDescriptionService = SiteDescriptionService;        
-	    console.log(siteDescriptionService);
+	    service = SiteDescriptionService;
+	    console.log(service);
 	}));
 	
 	it('should be defined', function() {
-	    expect(siteDescriptionService).toBeTruthy();
+	    expect(service).toBeTruthy();
 	});
 	
     });
