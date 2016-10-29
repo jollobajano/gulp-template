@@ -4,19 +4,15 @@
  * @description
  * # NavigationController
  */
-(function(){
-
+(function () {
     angular.module('application.nav')
 	.controller('NavigationController',
 		    ['$location', 'NavigationService',
-		     function($location, NavigationService){
-
+		     function ($location, NavigationService) {
 			 this.menuItems = NavigationService.list();
-			 
-			 this.condActiveClass = function(path){
+
+			 this.condActiveClass = function (path) {
 			     return ($location.path().endsWith(path)) ? 'active' : '';
 			 };
-			 
-	}]);
-
+     }]);
 })();

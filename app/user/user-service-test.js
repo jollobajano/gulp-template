@@ -1,52 +1,49 @@
-(function(){
+(function () {
+    'use strict';
 
-    "use strict";
+    describe('reddit api service', function () {
+        var userService, httpBackend;
 
-    describe("reddit api service", function () {
-	var userService, httpBackend;
+        beforeEach(module('application.user'));
 
-	beforeEach(module("application.user"));
-
-	beforeEach(inject(function (_UserService_, $httpBackend) {
+        beforeEach(inject(function (_UserService_, $httpBackend) {
 	    userService = _UserService_;
 	    httpBackend = $httpBackend;
-	}));
+        }));
 
-	it("should do something", function () {
-	    var url = "http://api.reddit.com/user/yoitsnate/submitted.json";
+        it('should do something', function () {
+	    var url = 'http://api.reddit.com/user/yoitsnate/submitted.json';
 	    httpBackend.whenGET(url).respond({
-		data: {
+        data: {
 		    children: [
-			{
+        {
 			    data: {
-				subreddit: "golang"
+        subreddit: 'golang'
 			    }
-			},
-			{
+        },
+        {
 			    data: {
-				subreddit: "javascript"
+        subreddit: 'javascript'
 			    }
-			},
-			{
+        },
+        {
 			    data: {
-				subreddit: "golang"
+        subreddit: 'golang'
 			    }
-			},
-			{
+        },
+        {
 			    data: {
-				subreddit: "javascript"
+        subreddit: 'javascript'
 			    }
-			}
+        }
 		    ]
-		}
+        }
 	    });
-	    userService.getSubredditsSubmittedToBy("yoitsnate").then(function(subreddits) {
-		expect(subreddits).toEqual(["golang", "javascript"]);
+	    userService.getSubredditsSubmittedToBy('yoitsnate').then(function (subreddits) {
+        expect(subreddits).toEqual(['golang', 'javascript']);
 	    });
 	    httpBackend.flush();
-	});
-
+        });
     });
-    
 })();
 

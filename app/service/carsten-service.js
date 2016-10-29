@@ -1,26 +1,25 @@
-(function(){
+(function () {
     'use strict';
-    
+
     angular.module('application.service')
-	.factory('CarstenService', [function() {
+	.factory('CarstenService', [function () {
 	    var items = [
-		{name: 'Carsten',
+        {name: 'Carsten',
 		 text: 'Min lille bror.'},
-		{name: 'Carsten',
+        {name: 'Carsten',
 		 text: 'Du är så duktig -- imponerande.'},
-		{name: 'Carsten',
+        {name: 'Carsten',
 		 text: 'Min saknade bror.'},
-		{name: 'Carsten',
-		 text: 'Min skyddsängel.'},
+        {name: 'Carsten',
+		 text: 'Min skyddsängel.'}
 	    ];
 	    return {
-		list: function() {
+        list: function () {
 		    return items;
-		},
-		time: function() {
+        },
+        time: function () {
 		    return new Date();
-		}
+        }
 	    };
-	}]);
-
+}]);
 })();

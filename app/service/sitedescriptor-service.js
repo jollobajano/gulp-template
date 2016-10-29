@@ -1,14 +1,14 @@
 (function () {
-  angular.module('application.service')
+    angular.module('application.service')
 	.service('SiteDescriptorService',
 		 ['$http', '$q', function ($http, $q) {
-		     var lastRequestFailed = true,
-			 promise,
-			 items = [];
-		     
+		     var lastRequestFailed = true;
+		     var promise;
+		     var items = [];
+
 		     return {
 			 name: 'SiteDescriptorService',
-			 
+
 			 getItems: function () {
 			     if (!promise || lastRequestFailed) {
 				 promise = $http.get('site.json').then(
@@ -26,5 +26,4 @@
 		     };
 		 }]
 		);
-    
 })();

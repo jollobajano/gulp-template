@@ -1,42 +1,42 @@
-(function(){
+(function () {
     'use strict';
 
-    function NavigationService(menuItems, fallBack) {
-	this.list = function() {
+    function NavigationService (menuItems, fallBack) {
+        this.list = function () {
 	    return menuItems;
-	};
-	
-	this.otherwise = function() {
+        };
+
+        this.otherwise = function () {
 	    return fallBack;
-	};
+        };
     }
-    
+
     angular.module('application.service')
-	.provider('NavigationService', function() {
+	.provider('NavigationService', function () {
 	    var menuItems = [
-		{title: 'Danmark',
+        {title: 'Danmark',
 		 url: '/danmark',
 		 templateUrl: '/danmark/danmark.html'},
-		{title: 'Carsten',
+        {title: 'Carsten',
 		 url: '/',
 		 templateUrl: '/hello/hello.html'},
-		{title: 'Mamma',
+        {title: 'Mamma',
 		 url: '/mamma',
 		 templateUrl: '/mamma/mamma.html'}
 	    ];
-	    
+
 	    var fallBack = '/';
 
-	    this.list = function() {
-		return menuItems;
+	    this.list = function () {
+        return menuItems;
 	    };
 
-	    this.otherwise = function() {
-		return fallBack;
+	    this.otherwise = function () {
+        return fallBack;
 	    };
-	    
-	    this.$get = function() {
-		return new NavigationService(menuItems, fallBack);
+
+	    this.$get = function () {
+        return new NavigationService(menuItems, fallBack);
 	    };
-	});
+});
 })();

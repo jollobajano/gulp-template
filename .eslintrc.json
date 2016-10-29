@@ -1,0 +1,29 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise"
+    ],
+    "globals": {
+	"angular": true,
+	"inject": true,
+	"injector": true
+    },
+    "env": {
+        "jasmine": true
+    },
+    "rules": {
+        "eqeqeq": 1,
+        "curly": "error",
+        "quotes": ["error", "single"],
+	"no-tabs": 0,
+	"no-mixed-spaces-and-tabs": 0,
+	"semi": ["error", "always"],
+	"no-shadow": ["error", {
+	    "builtinGlobals": false,
+	    "hoist": "functions",
+	    "allow": []
+	}],
+	"indent": ["warn", 4]
+    }
+}
