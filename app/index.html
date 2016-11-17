@@ -14,7 +14,7 @@
 
 	<div class="page-wrap">
 
-	    <nav ng-controller="NavigationController as nav">
+	    <nav ng-cloak ng-controller="NavigationController as nav">
 		<ul>
 		    <li ng-repeat="item in nav.menuItems" ng-class="nav.condActiveClass(item.url)">
                         <a href="#{{item.url}}">{{item.title}}</a>
@@ -22,7 +22,7 @@
 		</ul>
 	    </nav>
 
-	    <section ng-view class="view"></section>
+	    <section ng-cloak ng-view class="view"></section>
 
 
 	</div>

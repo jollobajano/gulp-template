@@ -55,6 +55,8 @@
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-wiredep": "^1.0.2",
-    "susy": "^2.2.12"
+    "proxy-middleware": "^0.15.0",
+    "susy": "^2.2.12",
+    "url": "^0.11.0"
   }
 }

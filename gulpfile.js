@@ -2,6 +2,8 @@
     'use strict';
 
     var browserSync = require('browser-sync').create();
+    var proxy = require('proxy-middleware');
+    var url = require('url');
     var concat = require('gulp-concat');
     var del = require('del');
     var eslint = require('gulp-eslint');
@@ -117,12 +119,15 @@
 
     // Start the web server and the browser
     gulp.task('browserSync', function () {
+	var proxyOptions = url.parse('http://localhost:8080/api');
+        proxyOptions.route = '/api';
         browserSync.init({
 	    server: ['dist', 'bower_components'],
 	    middleware: [
-        modRewrite([
+		proxy(proxyOptions),
+	        modRewrite([
 		    '!\\.\\w+$ /index.html [L]'
-        ])
+        	])
 	    ]
         });
     });
